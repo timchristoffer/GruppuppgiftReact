@@ -1,0 +1,2 @@
+import '../MainMenu/MainMenu.css';
+
