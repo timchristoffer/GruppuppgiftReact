@@ -3,15 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Settings from './Pages/Settings';
+import LoginSignup from "./Components/LoginSignup/LoginSignup";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Login />}>
+          <Route path="/signin" element={<Login />} />
           <Route index element={<Home />} />
-          <Route path="/" element={<Settings />} />
-        </Route>
+          <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );

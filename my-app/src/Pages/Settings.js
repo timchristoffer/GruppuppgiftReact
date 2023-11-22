@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Settings = () => {
+function Settings(){
   return (
     <div>
       <h2>Login/Setup Page</h2>
-      {/* Add your Settings page content here */}
+      <h2>Hej</h2>
     </div>
   );
 };
