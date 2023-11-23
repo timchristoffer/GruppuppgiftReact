@@ -3,19 +3,24 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Settings from './Pages/Settings';
-import { useState } from "react";
+
+import React, { useState } from "react";
+import NoPage from "./Pages/NoPage";
+import { AuthProvider } from "./AuthContext";
 
 export default function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
 
   return (
+  <AuthProvider>
     <BrowserRouter>
       <Routes>
-          <Route path="/signin" element={<Login />} />
-          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route index element={<Login />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
+  </AuthProvider>  
   );
 }
 
