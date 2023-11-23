@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Settings from './Pages/Settings';
+
 import React, { useState } from "react";
 import NoPage from "./Pages/NoPage";
 import { AuthProvider } from "./AuthContext";

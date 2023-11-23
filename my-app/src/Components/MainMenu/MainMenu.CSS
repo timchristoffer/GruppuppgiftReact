@@ -1,0 +1,45 @@
+#menuButtons {
+    padding: 1em;
+    background-color: #ffe500;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 12em;
+    height: 30em;
+    position: absolute;
+    top: 6em;
+    left: 10%;
+}
+ button {
+    background-color: #fff065;
+    color: #383838;
+    width: 9em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: large;
+
+ }
+
+ button:hover {
+   background-color: #f3ea96;
+   transition: 0.3s;
+ }
+ button:active {
+    background-color: rgb(216, 216, 216);
+ }
+
+ #signOut {
+    margin-top: 7em;
+    background-color: #ffffff;
+    
+ }
+
+ #signOut:hover {
+    background-color: rgb(243, 144, 144);
+ }

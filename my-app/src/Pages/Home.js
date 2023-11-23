@@ -1,3 +1,8 @@
+import React from 'react';
+import MainMenu from '../Components/MainMenu/MainMenu'
+import CentralContent from '../Components/CentralContent/CentralContent';
+import { useState } from "react";
+
 import React, { useEffect } from 'react';
 import { useAuth } from '../AuthContext';
 import { Navigate } from 'react-router-dom';
@@ -12,11 +17,13 @@ const Home = () => {
       window.location.href = '/'; // eller Navigate('/login')
     }
   }, [isAuthenticated]);
+  
+  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <div>
-      {/* Ditt Home-komponents innehåll här */}
-    </div>
+      <CentralContent showProfile={showProfile} />
+      <MainMenu showProfile={() => setShowProfile(true)} showFeed={() => setShowProfile(false)} /></div>
   );
 };
 
