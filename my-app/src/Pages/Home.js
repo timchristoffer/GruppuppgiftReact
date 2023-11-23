@@ -1,14 +1,14 @@
-import React from 'react';
 import MainMenu from '../Components/MainMenu/MainMenu'
 import CentralContent from '../Components/CentralContent/CentralContent';
-import { useState } from "react";
-
 import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../AuthContext';
 import { Navigate } from 'react-router-dom';
 
+
 const Home = () => {
   const { isAuthenticated } = useAuth();
+  const [showProfile, setShowProfile] = useState(false);
 
   // Om användaren inte är inloggad, skicka dem till inloggningssidan
   useEffect(() => {
@@ -18,12 +18,13 @@ const Home = () => {
     }
   }, [isAuthenticated]);
   
-  const [showProfile, setShowProfile] = useState(false);
+
 
   return (
     <div>
       <CentralContent showProfile={showProfile} />
-      <MainMenu showProfile={() => setShowProfile(true)} showFeed={() => setShowProfile(false)} /></div>
+      <MainMenu showProfile={() => setShowProfile(true)} showFeed={() => setShowProfile(false)} />
+    </div>
   );
 };
 

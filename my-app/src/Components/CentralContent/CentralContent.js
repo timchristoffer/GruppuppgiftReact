@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Feed from '../MainMenu/Feed';  // sökväg till Kalles komponent
-import ProfilePage from '../MainMenu/Profilepage';  // sökväg till Hussens komponent
+import Feed from '../Feed/Feed';  // sökväg till Kalles komponent
+import ProfilePage from '../profile/profile';  // sökväg till Hussens komponent
 import './CentralContent.css';
 
 export default function CentralContent({ showProfile }) {
