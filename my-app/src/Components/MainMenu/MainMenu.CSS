@@ -26,6 +26,10 @@
 
  }
 
+ button:hover {
+   background-color: #f3ea96;
+   transition: 0.3s;
+ }
  button:active {
     background-color: rgb(216, 216, 216);
  }

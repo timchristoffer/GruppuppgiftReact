@@ -3,10 +3,7 @@
     justify-content: center;
     position: absolute;
     top: 6em;
-    
     width: 100%;
-    
-
 }
 
 #content {
@@ -15,5 +12,4 @@
     background-color: rgb(243, 243, 243);
     height: 40em;
     width: 40em;
-    
 }

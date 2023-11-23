@@ -3,9 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Settings from './Pages/Settings';
-import LoginSignup from "./Components/LoginSignup/LoginSignup";
+import { useState } from "react";
 
 export default function App() {
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+
   return (
     <BrowserRouter>
       <Routes>

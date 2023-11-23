@@ -4,7 +4,7 @@ import CentralContent from '../Components/CentralContent/CentralContent';
 import { useState } from "react";
 
 
-const Home = () => {
+const HomeView = () => {
   const [showProfile, setShowProfile] = useState(false);
 
   return (
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeView;
