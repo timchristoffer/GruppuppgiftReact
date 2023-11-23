@@ -1,0 +1,17 @@
+#advertisement {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 10%;
+    top: 6em; 
+    background-color: #ffe500;
+    width: 14em;
+    height: 32em;
+}
+
+#test{
+    padding-top: 1.8em;
+    writing-mode: vertical-rl;
+  text-orientation: upright;
+    
+}
