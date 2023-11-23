@@ -3,8 +3,10 @@
     flex-direction: column;
     margin: auto;
     margin-top: 200px;
+    width: 600px;
     background: #FFDC00;
     padding-bottom: 30px;
+    border-radius: 20px;
 }
 
 .header{
@@ -63,3 +65,46 @@ img {
     color: #383838;
     font-size: 19px;
 }
+
+.forgot-password{
+    padding-left: 62px;
+    margin-top: 27px;
+    color: #383838;
+    font-size: 18px;
+}
+
+.forgot-password span{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.submit-container{
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #ffffff;
+    background: #5e5101; 
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gray{
+    background: #EAEAEA;
+    color: #676767;
+}
+
+.success-message {
+    text-align: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+    color: #383838; /* Change the color to your preference */
+  }

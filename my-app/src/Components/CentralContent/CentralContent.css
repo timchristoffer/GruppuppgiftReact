@@ -1,0 +1,15 @@
+#centralContent {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 6em;
+    width: 100%;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    height: 40em;
+    width: 40em;
+}
