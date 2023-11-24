@@ -9,7 +9,8 @@
 #content {
     display: flex;
     justify-content: center;
-    background-color: rgb(243, 243, 243);
+    background: #FFDC00;
+    border-radius: 20px;
     height: 40em;
     width: 40em;
 }

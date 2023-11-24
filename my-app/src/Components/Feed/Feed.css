@@ -1,0 +1,89 @@
+  .container {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    background: #FFDC00;
+    padding-bottom: 30px;
+    border-radius: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .feed-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #383838;
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  .underline {
+    width: 61px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 9px;
+  }
+  
+  .feed-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px; /* Öka bredden för inmatningsrutan */
+    height: 120px; /* Öka höjden för inmatningsrutan */
+    background: #fdfdfd;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  
+  .post-item input {
+    height: 100px; /* Öka höjden för textområdet */
+    width: 600px; /* Öka bredden för textområdet */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #383838;
+    font-size: 19px;
+  }
+
+  .post-item .username{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: blue;
+    margin-right: 10px;
+  }
+  
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 60px auto;
+  }
+  
+  .submit {
+    width: 220px;
+    height: 59px;
+    color: #ffffff;
+    background: #5e5101;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
