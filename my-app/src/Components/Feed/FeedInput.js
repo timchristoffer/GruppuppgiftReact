@@ -1,4 +1,5 @@
 import React from 'react';
+import './Feed.css';
 
 const FeedInput = ({ onSubmit }) => {
   const handlePostSubmit = (event) => {
@@ -11,9 +12,18 @@ const FeedInput = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handlePostSubmit}>
-      <input type="text" name="postText" placeholder="Skriv ditt inlägg här" />
-      <button type="submit">Posta</button>
+    <form className="feed-input-container" onSubmit={handlePostSubmit}>
+      <div className="feed-input">
+        <input
+          type="text"
+          name="postText"
+          placeholder="What's happening?"
+          className="post-text-input"
+        />
+        <button type="submit-post" className="post-button">
+          Post
+        </button>
+      </div>
     </form>
   );
 };
