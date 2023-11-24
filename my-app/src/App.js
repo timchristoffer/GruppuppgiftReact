@@ -7,19 +7,22 @@ import Settings from './Pages/Settings';
 import React, { useState } from "react";
 import NoPage from "./Pages/NoPage";
 import { AuthProvider } from "./AuthContext";
+import { UserProvider } from "./UserContext";
 
 export default function App() {
 
   return (
   <AuthProvider>
-    <BrowserRouter>
-      <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route index element={<Login />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route index element={<Login />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   </AuthProvider>  
   );
 }

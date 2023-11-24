@@ -1,45 +1,52 @@
 import React, { useState } from 'react';
 import FeedInput from './FeedInput';
 import { clearLocalStorage } from './FeedClear';
+import { useLocation } from 'react-router-dom';
+import { useUser } from '../../UserContext';
+import './Feed.css';
 
-const Feed = () => { //Komponent deklareras
+const Feed = () => {
   const [posts, setPosts] = useState(getSavedPosts());
+  const { username } = useUser();
 
-  const handlePostSubmit = (inputText) => {//hanterar nya inlägg
+  const handlePostSubmit = (inputText) => {
     const newPost = {
-      id: Date.now(),//ger ny inlägg unikt id
-      text: inputText,
+      id: Date.now(),
+      text: inputText, // Display only the inputText without the username
     };
 
     const updatedPosts = [newPost, ...posts];
-    localStorage.setItem('posts', JSON.stringify(updatedPosts));//uppdaterar local storage
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
 
     setPosts(updatedPosts);
   };
 
   const handleClearLocalStorage = () => {
-    clearLocalStorage();//tar bort inlägg från local storage
-    setPosts([]); // Tar bort inlägg från state
+    clearLocalStorage();
+    setPosts([]);
   };
 
   function getSavedPosts() {
-    return JSON.parse(localStorage.getItem('posts')) || [];//hämtar sparade inlägg från locla storage
+    return JSON.parse(localStorage.getItem('posts')) || [];
   }
 
   return (
-    <div>
-      <div>
+    <div className="feed-container">
+      <div className="input-container">
         <FeedInput onSubmit={handlePostSubmit} />
-        <button onClick={handleClearLocalStorage}>Clear Local Storage</button>
+        <button onClick={handleClearLocalStorage} className="clear-button">
+          Clear Local Storage
+        </button>
       </div>
-      <div>
-        <h2>Flöde</h2>
-        <ul>
-            {posts.map((post) => (
-                <li key={post.id}>{post.text}</li>
-            ))}
+      <div className="feed-content">
+        <h2 className="feed-header">Flöde</h2>
+        <ul className="post-list">
+          {posts.map((post) => (
+            <li key={post.id} className="post-item">
+              <span className="username">{username}:</span> {post.text}
+            </li>
+          ))}
         </ul>
-
       </div>
     </div>
   );
