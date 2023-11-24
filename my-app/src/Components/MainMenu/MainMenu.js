@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './MainMenu.css'
 import React from 'react';
 import Advertising from '../Advertising/Advertising'
+
 import logo from '../Media/logo.png';
 import homeIcon from '../Media/home.png';
 import profileIcon from '../Media/profile.png';
@@ -37,7 +38,6 @@ export default function MainMenu({ showFeed, showProfile }) {
       </div>
 
       <Advertising />
-
     </>
   );
 }

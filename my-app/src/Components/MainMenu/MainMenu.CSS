@@ -37,7 +37,7 @@
  }
 
  #signOut {
-    margin-top: 7em;
+    
     background-color: #ffffff;
     
  }
@@ -49,10 +49,9 @@
  #logo {
    width: 10em;
    opacity: 1;
- }
 
  .icon {
    width: 20px; /* Adjust the size as needed */
    height: 20px;
-   margin-right: 10px; /* Adjust the spacing between the icon and text */
+   margin-right: 10px; 
  }
