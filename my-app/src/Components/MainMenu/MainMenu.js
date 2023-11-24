@@ -6,7 +6,7 @@ import logo from '../Media/logo.png'
 
 
 
-export default function MainMenu(showFeed, showProfile) {
+export default function MainMenu({ showFeed, showProfile }) {
   return (<>
     <div id='menuButtons'>
     <img src={logo} id='logo'></img>
