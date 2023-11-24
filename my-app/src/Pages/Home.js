@@ -8,7 +8,7 @@ import { Navigate } from 'react-router-dom';
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
-  const [showProfile, setShowProfile] = useState(false);
+  const [showContent, setShowContent] = useState(0);
 
   // Om användaren inte är inloggad, skicka dem till inloggningssidan
   useEffect(() => {
@@ -22,8 +22,8 @@ const Home = () => {
 
   return (
     <div>
-      <CentralContent showProfile={showProfile} />
-      <MainMenu showProfile={() => setShowProfile(true)} showFeed={() => setShowProfile(false)} />
+      <CentralContent showContent={showContent} />
+      <MainMenu showProfile={() => setShowContent(1)} showFeed={() => setShowContent(0)} showSettings={() => setShowContent(2)}/>
     </div>
   );
 };

@@ -12,6 +12,10 @@ const Settings = () => {
       window.location.href = '/'; // eller Navigate('/login')
     }
   }, [isAuthenticated]);
+
+  return (
+  <h1>Test Hej hej hej!!!!!!111one</h1>);
+
 }
 
 export default Settings;
