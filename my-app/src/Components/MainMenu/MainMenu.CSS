@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
     width: 12em;
-    height: 30em;
+    height: 33em;
     position: absolute;
     top: 6em;
     left: 10%;
@@ -35,11 +35,16 @@
  }
 
  #signOut {
-    margin-top: 7em;
+    
     background-color: #ffffff;
     
  }
 
  #signOut:hover {
     background-color: rgb(243, 144, 144);
+ }
+
+ #logo {
+   width: 10em;
+   opacity: 1;
  }
