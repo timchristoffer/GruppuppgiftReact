@@ -2,11 +2,6 @@ import { Link } from 'react-router-dom';
 import './MainMenu.css'
 import React from 'react';
 import Advertising from '../Advertising/Advertising'
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-
 import logo from '../Media/logo.png';
 import homeIcon from '../Media/home.png';
 import profileIcon from '../Media/profile.png';
@@ -14,16 +9,7 @@ import settingsIcon from '../Media/settings.png';
 import signOutIcon from '../Media/signout.png';
 
 export default function MainMenu({ showFeed, showProfile }) {
-<<<<<<< Updated upstream
-  return (<>
-    <div id='menuButtons'>
-      <button onClick={showFeed}>Home</button>
-      <button onClick={showProfile}>Profile</button>
-      <Link to="/settings"><button>Settings</button></Link>
-      <Link to="/signin"><button id='signOut'>Sign out</button></Link>
-    </div>
-    <Advertising />
-=======
+
   return (
     <>
       <div id='menuButtons'>
@@ -51,7 +37,7 @@ export default function MainMenu({ showFeed, showProfile }) {
       </div>
 
       <Advertising />
->>>>>>> Stashed changes
+
     </>
   );
 }

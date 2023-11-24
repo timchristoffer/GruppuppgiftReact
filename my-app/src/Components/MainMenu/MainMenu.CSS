@@ -7,12 +7,7 @@
     flex-direction: column;
     position: absolute;
     width: 12em;
-<<<<<<< Updated upstream
-    height: 30em;
-    position: absolute;
-=======
     height: 33em;
->>>>>>> Stashed changes
     top: 6em;
     left: 10%;
 }
@@ -49,8 +44,6 @@
 
  #signOut:hover {
     background-color: rgb(243, 144, 144);
-<<<<<<< Updated upstream
-=======
  }
 
  #logo {
@@ -62,5 +55,4 @@
    width: 20px; /* Adjust the size as needed */
    height: 20px;
    margin-right: 10px; /* Adjust the spacing between the icon and text */
->>>>>>> Stashed changes
  }
