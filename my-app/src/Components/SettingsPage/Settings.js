@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Settings = () => {
     return(
-        <h1>HEJ123</h1>
+        <h1>Settings</h1>
     );
 }
 
