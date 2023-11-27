@@ -4,12 +4,14 @@
     position: absolute;
     right: 10%;
     top: 6em; 
-    background-color: #FFDC00;
     width: 14em;
     height: 32em;
     border-radius: 20px;
 }
-
+img {
+  opacity: 1;
+  border-radius: 20px;
+}
 #test{
     padding-top: 1.8em;
     writing-mode: vertical-rl;
