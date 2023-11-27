@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FeedInput from './FeedInput';
-import { clearLocalStorage } from './FeedClear';
+//import { clearLocalStorage } from './FeedClear';
 import { useUser } from '../../UserContext';
 import './Feed.css';
 
@@ -14,7 +14,6 @@ const Feed = () => {
   const { username } = useUser();
 
   useEffect(() => {
-    // Initialize likes and dislikes from local storage
     const savedLikes = JSON.parse(localStorage.getItem('likes')) || {};
     const savedDislikes = JSON.parse(localStorage.getItem('dislikes')) || {};
     setLikes(savedLikes);
@@ -38,12 +37,14 @@ const Feed = () => {
     setDislikes({ ...dislikes, [newPost.id]: 0 });
   };
 
+  /*
   const handleClearLocalStorage = () => {
     clearLocalStorage();
     setPosts([]);
     setLikes({});
     setDislikes({});
   };
+  */
 
   const handleLike = (postId) => {
     setLikes((prevLikes) => {
@@ -68,9 +69,11 @@ const Feed = () => {
 
   return (
     <div className="feed-container">
-      <button onClick={handleClearLocalStorage} className="clear-button">
+      
+      {/* <button onClick={handleClearLocalStorage} className="clear-button">
         Clear Local Storage
-      </button>
+      </button> */}
+      
       <div className="input-container">
         <FeedInput onSubmit={handlePostSubmit} />
       </div>
