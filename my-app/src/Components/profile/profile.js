@@ -24,9 +24,9 @@ const ProfilePage = () => {
           <img src={profilePic} alt="User Profile" />
         </div>
         <div className="profile-page-details">
-          <h2>User</h2>
+          <h2>User:</h2>
           <h3>{username}</h3>
-          <h2>Email: </h2>
+          <h2>Email:</h2>
           <h3>{email}</h3>
         </div>
       </div>
