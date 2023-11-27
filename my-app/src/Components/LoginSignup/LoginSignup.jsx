@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginSignup.css';
 import { useAuth } from '../../AuthContext';
@@ -18,6 +18,13 @@ const LoginSignup = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const { setUser } = useUser();
+
+  useEffect(() => {
+    // Set the local state if email is available in the context
+    if (email) {
+      setEmail(email);
+    }
+  }, [email]);
 
   const clearFormFields = () => {
     setUsername('');
@@ -45,7 +52,7 @@ const LoginSignup = () => {
     localStorage.setItem('allUsers', JSON.stringify(updatedUserData));
 
     setSuccessMessage('Account created successfully!');
-    setUser(username);
+    setUser(username, email);
     setAction('Login');
 
     clearFormFields();
@@ -74,7 +81,7 @@ const LoginSignup = () => {
       return;
     }
 
-    setUser(user.username);
+    setUser(user.username, email);
     login();
 
     clearFormFields();
