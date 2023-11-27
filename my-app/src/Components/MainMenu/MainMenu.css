@@ -30,6 +30,8 @@
 
  button:hover {
    background-color: #5e5101;
+
+ }
    transition: 0.3s;
  }
  button:active {
