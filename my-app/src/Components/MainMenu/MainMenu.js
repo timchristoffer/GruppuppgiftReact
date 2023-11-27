@@ -9,7 +9,7 @@ import profileIcon from '../Media/profile.png';
 import settingsIcon from '../Media/settings.png';
 import signOutIcon from '../Media/signout.png';
 
-export default function MainMenu({ showFeed, showProfile }) {
+export default function MainMenu({ showFeed, showProfile, showSettings }) {
 
   return (
     <>
@@ -23,12 +23,10 @@ export default function MainMenu({ showFeed, showProfile }) {
           <img src={profileIcon} alt='Profile' className='icon' />
           Profile
         </button>
-        <Link to="/settings">
-          <button>
+          <button onClick={showSettings}>
             <img src={settingsIcon} alt='Settings' className='icon' />
             Settings
           </button>
-        </Link>
         <Link to="/">
           <button id='signOut'>
             <img src={signOutIcon} alt='Sign Out' className='icon' />
