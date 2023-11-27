@@ -45,13 +45,29 @@
 
 .post-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px; /* Öka bredden för inmatningsrutan */
-  height: 120px; /* Öka höjden för inmatningsrutan */
+  flex-direction: column; /* Adjusted to display header and text vertically */
+  width: 400px;
   background: #fdfdfd;
   border-radius: 6px;
   margin-top: 10px;
+  overflow: hidden; /* Hide overflow */
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  padding: 8px;
+  border-bottom: 2px solid #bda400;
+}
+
+.post-text {
+  padding: 8px;
+  font-size: 16px;
+  max-height: 80px; /* Set the maximum height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 
 .post-item input {
@@ -194,4 +210,71 @@
 .post-text {
   padding: 8px;
   font-size: 16px;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.likeButton, .dislikeButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.likeButton {
+  justify-content: flex-start; /* Align like button to the left */
+  margin-left: 10px; /* Add some margin for separation */
+}
+
+.dislikeButton {
+  justify-content: flex-end; /* Align dislike button to the right */
+  margin-right: 10px; /* Add some margin for separation */
+}
+
+.likeButton:hover{
+  background: none;
+}
+
+.dislikeButton:hover{
+  background: none;
+}
+
+.likeButton img, .dislikeButton img {
+  width: 20px; 
+  height: 20px; 
+}
+
+.spacer {
+  width: 10px; 
+}
+
+.feed-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feed-input {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #bda400;
+  border-radius: 8px;
+  width: 70%;
+  background-color: #ffffff;
+}
+
+.character-count-container {
+  margin-top: 5px;
+}
+
+.character-counter {
+  font-size: 14px;
+  color: #888;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginSignup.css';
 import { useAuth } from '../../AuthContext';
@@ -8,6 +8,22 @@ import user_icon from '../Media/user_icon.png';
 import password_icon from '../Media/password_icon.png';
 import email_icon from '../Media/email_icon.png';
 import logo from '../Media/logo.png';
+
+// Importerar profil bilder.
+import profilePic1 from '../ProfilePictures/BillGates.jpg';
+import profilePic2 from '../ProfilePictures/DonaldTrump.jpg';
+import profilePic3 from '../ProfilePictures/HillaryClinton.jpg'
+import profilePic4 from '../ProfilePictures/JoeBiden.jpeg'
+import profilePic5 from '../ProfilePictures/MarkZucker.jpeg'
+import profilePic6 from '../ProfilePictures/MuskWeed.jpg'
+import profilePic7 from '../ProfilePictures/Obama.jpg'
+// Lägg till flera bilder.
+
+export const getRandomProfilePic = () => {
+  const profilePics = [profilePic1, profilePic2, profilePic3, profilePic4, profilePic5, profilePic6, profilePic7];
+  const randomIndex = Math.floor(Math.random() * profilePics.length);
+  return profilePics[randomIndex];
+};
 
 const LoginSignup = () => {
   const [action, setAction] = useState('Login');
@@ -19,10 +35,24 @@ const LoginSignup = () => {
   const { login } = useAuth();
   const { setUser } = useUser();
 
+  useEffect(() => {
+    // Set the local state if email is available in the context
+    if (email) {
+      setEmail(email);
+    }
+  }, [email]);
+
   const clearFormFields = () => {
     setUsername('');
     setEmail('');
     setPassword('');
+  };
+
+  // Function to get a random profile picture
+  const getRandomProfilePic = () => {
+    const profilePics = [profilePic1, profilePic2]; // Add more profile pictures if needed
+    const randomIndex = Math.floor(Math.random() * profilePics.length);
+    return profilePics[randomIndex];
   };
 
   const handleSignup = () => {
@@ -39,13 +69,19 @@ const LoginSignup = () => {
       return;
     }
 
-    const newUser = { id: Date.now(), username, email: lowercaseEmail, password };
+    const newUser = {
+      id: Date.now(),
+      username,
+      email: lowercaseEmail,
+      password,
+      profilePic: getRandomProfilePic(), // Set the profile picture
+    };
     const updatedUserData = [...existingUserData, newUser];
 
     localStorage.setItem('allUsers', JSON.stringify(updatedUserData));
 
     setSuccessMessage('Account created successfully!');
-    setUser(username);
+    setUser(username, email);
     setAction('Login');
 
     clearFormFields();
@@ -74,7 +110,7 @@ const LoginSignup = () => {
       return;
     }
 
-    setUser(user.username);
+    setUser(user.username, email);
     login();
 
     clearFormFields();

@@ -33,14 +33,13 @@
    transition: 0.3s;
      
  }
+
  button:active {
     background-color: rgb(216, 216, 216);
  }
 
  #signOut {
-    
     background-color: #ffffff;
-    
  }
 
  #signOut:hover {
