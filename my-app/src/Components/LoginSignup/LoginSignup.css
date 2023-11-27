@@ -1,13 +1,52 @@
-.container{
+.main-container {
     display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     width: 600px;
     background: #FFDC00;
     padding-bottom: 30px;
     border-radius: 20px;
-}
+    margin-left: 20px; 
+    animation: dropDown 0.8s ease forwards; 
+  }
+
+  .logo {
+    width: 600px;
+    opacity: 100%;
+  }
+
+  .logo:hover{
+    transform: rotate(360deg);
+  }
+
+  @keyframes dropDown {
+    from {
+      transform: translateY(-100vh); 
+    }
+    to {
+      transform: translateY(0); 
+    }
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    width: 600px;
+    background: #FFDC00;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    margin-left: 20px; 
+    animation: dropDown 0.8s ease forwards;
+  }
 
 .header{
     display: flex;
@@ -67,8 +106,8 @@ img {
 }
 
 .forgot-password{
-    padding-left: 62px;
-    margin-top: 27px;
+    padding-left: 0px;
+    margin-top: 24px;
     color: #383838;
     font-size: 18px;
 }
@@ -91,7 +130,7 @@ img {
     width: 220px;
     height: 59px;
     color: #ffffff;
-    background: #5e5101; 
+    background-color: #fff065; 
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;

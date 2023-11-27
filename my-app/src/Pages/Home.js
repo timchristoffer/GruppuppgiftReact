@@ -8,13 +8,11 @@ import { Navigate } from 'react-router-dom';
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
-  const [showProfile, setShowProfile] = useState(false);
+  const [showContent, setShowContent] = useState(0);
 
-  // Om användaren inte är inloggad, skicka dem till inloggningssidan
   useEffect(() => {
     if (!isAuthenticated) {
-      // Du kan också använda Navigate från react-router-dom här
-      window.location.href = '/'; // eller Navigate('/login')
+      window.location.href = '/';
     }
   }, [isAuthenticated]);
   
@@ -22,8 +20,8 @@ const Home = () => {
 
   return (
     <div>
-      <CentralContent showProfile={showProfile} />
-      <MainMenu showProfile={() => setShowProfile(true)} showFeed={() => setShowProfile(false)} />
+      <CentralContent showContent={showContent} />
+      <MainMenu showFeed={() => setShowContent(0)} showProfile={() => setShowContent(1)} showSettings={() => setShowContent(2)}/>
     </div>
   );
 };

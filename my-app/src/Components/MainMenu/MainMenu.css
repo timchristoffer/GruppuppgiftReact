@@ -1,13 +1,13 @@
 #menuButtons {
     padding: 1em;
-    background-color: #ffe500;
+    background-color: #FFDC00;
     border-radius: 18px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: absolute;
     width: 12em;
     height: 33em;
-    position: absolute;
     top: 6em;
     left: 10%;
 }
@@ -23,11 +23,15 @@
     cursor: pointer;
     font-weight: 700;
     font-size: large;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
 
  button:hover {
-   background-color: #f3ea96;
+   background-color: #5e5101;
+
+ }
    transition: 0.3s;
  }
  button:active {
@@ -49,8 +53,8 @@
    opacity: 1;
  }
 
-.icon {
-   width: 20px; 
+ .icon {
+   width: 20px;
    height: 20px;
    margin-right: 10px; 
  }

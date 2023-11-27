@@ -7,6 +7,7 @@ import { useUser } from '../../UserContext';
 import user_icon from '../Media/user_icon.png';
 import password_icon from '../Media/password_icon.png';
 import email_icon from '../Media/email_icon.png';
+import logo from '../Media/logo.png';
 
 const LoginSignup = () => {
   const [action, setAction] = useState('Login');
@@ -18,132 +19,135 @@ const LoginSignup = () => {
   const { login } = useAuth();
   const { setUser } = useUser();
 
+  const clearFormFields = () => {
+    setUsername('');
+    setEmail('');
+    setPassword('');
+  };
+
   const handleSignup = () => {
-    // Check if any required field is empty
     if (!username || !email || !password) {
       setSuccessMessage('Please fill in all fields.');
       return;
     }
-  
-    // Get existing user data from local storage
-    const existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
-  
-    // Ensure that existingUserData is an array
-    const userDataArray = Array.isArray(existingUserData) ? existingUserData : [existingUserData];
-  
-    // Check if the username is already taken
-    const isUsernameTaken = userDataArray.some((user) => user.username === username);
-  
-    if (isUsernameTaken) {
-      setSuccessMessage('Username is already taken. Please choose another.');
+
+    const lowercaseEmail = email.toLowerCase();
+    const existingUserData = JSON.parse(localStorage.getItem('allUsers')) || [];
+
+    if (existingUserData.some((user) => user.email === lowercaseEmail)) {
+      setSuccessMessage('Email is already registered. Please use another.');
       return;
     }
-  
-    // Save user information to local storage
-    const userData = [...userDataArray, { username, email, password }];
-    localStorage.setItem('userData', JSON.stringify(userData));
-  
-    // Show success message
+
+    const newUser = { id: Date.now(), username, email: lowercaseEmail, password };
+    const updatedUserData = [...existingUserData, newUser];
+
+    localStorage.setItem('allUsers', JSON.stringify(updatedUserData));
+
     setSuccessMessage('Account created successfully!');
-  
     setUser(username);
-    // Change action back to "Login" after signup
     setAction('Login');
-  
+
+    clearFormFields();
+
     setTimeout(() => {
       setSuccessMessage('');
     }, 3000);
   };
 
   const handleLogin = () => {
-    // Check if any required field is empty
     if (!email || !password) {
       setSuccessMessage('Please fill in all fields.');
       return;
     }
-  
-    // Get existing user data from local storage
-    const existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
-  
-    // Check if the user exists in local storage
+
+    const lowercaseEmail = email.toLowerCase();
+
+    const existingUserData = JSON.parse(localStorage.getItem('allUsers')) || [];
+
     const user = existingUserData.find(
-      (u) => u.email === email && u.password === password
+      (u) => u.email === lowercaseEmail && u.password === password
     );
-  
+
     if (!user) {
       setSuccessMessage('Invalid credentials. Please try again.');
       return;
     }
-  
+
     setUser(user.username);
-  
     login();
-  
+
+    clearFormFields();
+
     setTimeout(() => {
-      // Navigate to the "Home" page
       navigate('/home');
     }, 2000);
   };
 
   return (
-    <div className="container">
-      <div className="header">
-        <div className="text">{action}</div>
-        <div className="underline"></div>
+    <div className="main-container">
+      <div className="logo-container">
+        <img src={logo} alt="Logo" className="logo" />
       </div>
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      <div className="inputs">
-        {action === 'Login' ? (
-          <div></div>
-        ) : (
+      <div className="login-container">
+        <div className="header">
+          <div className="text">{action}</div>
+          <div className="underline"></div>
+        </div>
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        <div className="inputs">
+          {action === 'Login' ? (
+            <div></div>
+          ) : (
+            <div className="input">
+              <img src={user_icon} alt="" />
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+          )}
           <div className="input">
-            <img src={user_icon} alt="" />
+            <img src={email_icon} alt="" />
             <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-        )}
-        <div className="input">
-          <img src={email_icon} alt="" />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="input">
-          <img src={password_icon} alt="" />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-      </div>
-      {action === 'Sign Up' ? (
-        <div></div>
-      ) : (
-        <div className="forgot-password">
-          Forgot Password? <span>Click Here!</span>
-        </div>
-      )}
-      <div className="submit-container">
-        {action === 'Login' ? (
-          <div className="submit gray" onClick={() => setAction('Sign Up')}>
-            Sign Up
+          <div className="input">
+            <img src={password_icon} alt="" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
+        </div>
+        {action === 'Sign Up' ? (
+          <div></div>
         ) : (
-          <div className="submit" onClick={handleSignup}>
-            Create
+          <div className="forgot-password">
+            Forgot Password? <span>Click Here!</span>
           </div>
         )}
-        <div className={action === 'Sign Up' ? 'submit gray' : 'submit'} onClick={handleLogin}>
-          Login
+        <div className="submit-container">
+          {action === 'Login' ? (
+            <div className="submit gray" onClick={() => setAction('Sign Up')}>
+              Sign Up
+            </div>
+          ) : (
+            <div className="submit" onClick={handleSignup}>
+              Create
+            </div>
+          )}
+          <div className={action === 'Sign Up' ? 'submit gray' : 'submit'} onClick={handleLogin}>
+            Login
+          </div>
         </div>
       </div>
     </div>
@@ -151,5 +155,3 @@ const LoginSignup = () => {
 };
 
 export default LoginSignup;
-
-

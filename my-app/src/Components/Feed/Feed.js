@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import FeedInput from './FeedInput';
 import { clearLocalStorage } from './FeedClear';
-import { useLocation } from 'react-router-dom';
 import { useUser } from '../../UserContext';
 import './Feed.css';
 
@@ -12,7 +11,9 @@ const Feed = () => {
   const handlePostSubmit = (inputText) => {
     const newPost = {
       id: Date.now(),
-      text: inputText, // Display only the inputText without the username
+      username: username,
+      text: inputText,
+      date: new Date().toLocaleString(), 
     };
 
     const updatedPosts = [newPost, ...posts];
@@ -27,23 +28,27 @@ const Feed = () => {
   };
 
   function getSavedPosts() {
-    return JSON.parse(localStorage.getItem('posts')) || [];
+    const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    return savedPosts.reverse(); 
   }
 
   return (
     <div className="feed-container">
+      <button onClick={handleClearLocalStorage} className="clear-button">
+        Clear Local Storage
+      </button>
       <div className="input-container">
         <FeedInput onSubmit={handlePostSubmit} />
-        <button onClick={handleClearLocalStorage} className="clear-button">
-          Clear Local Storage
-        </button>
       </div>
       <div className="feed-content">
-        <h2 className="feed-header">Flöde</h2>
         <ul className="post-list">
           {posts.map((post) => (
             <li key={post.id} className="post-item">
-              <span className="username">{username}:</span> {post.text}
+              <div className="post-header">
+                <span className="username">{post.username}</span>
+                <span className="post-date">{post.date}</span>
+              </div>
+              <div className="post-text">{post.text}</div>
             </li>
           ))}
         </ul>

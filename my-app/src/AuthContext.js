@@ -6,14 +6,10 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = () => {
-    // Lägg till din autentiseringslogik här
-    // Exempel: setAuth(true) om autentiseringen är framgångsrik
     setIsAuthenticated(true);
   };
 
   const logout = () => {
-    // Lägg till din utloggningslogik här
-    // Exempel: setAuth(false) när användaren loggar ut
     setIsAuthenticated(false);
   };
 
