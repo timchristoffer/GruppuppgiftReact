@@ -17,10 +17,13 @@ const Settings = () => {
   return ( 
     <div id='settingsContainer'>
         <h1>Settings</h1>
-        <div>
+{/*         <div>
             <input type='checkbox' id='colorToggle' onChange={toggleColor}/>
             <label for="colorToggle">Darkmode</label>
-        </div>
+        </div> */}
+        <button onClick={toggleColor}>
+          {isBlack ? 'Light-Mode' : 'Dark-Mode'}
+        </button>
         <button onClick={changeColor}>
             Generate Random Color
         </button>
