@@ -32,11 +32,11 @@ const Settings = () => {
         <button onClick={changeColor}>
             Generate Random Color
         </button>
-        <button onClick={videoLink}>
-          Terms and Conditions
-        </button>
         <button onClick={flip}>
           Flip
+        </button>
+        <button onClick={videoLink}>
+          Terms and Conditions
         </button>
     </div>
   );
