@@ -1,18 +1,18 @@
 .container {
   display: flex;
-  flex-direction: column; /* Adjusted for centering */
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
   background: #ffdc00;
   padding-bottom: 30px;
   border-radius: 20px;
-  margin: auto; /* Center the container */
+  margin: auto; 
   overflow: auto;
 }
 
 .input-container {
   display: flex;
-  flex-direction: column; /* Adjusted for centering */
+  flex-direction: column;
   align-items: center;
   gap: 9px;
   width: 100%;
@@ -45,18 +45,18 @@
 
 .post-item {
   display: flex;
-  flex-direction: column; /* Adjusted to display header and text vertically */
+  flex-direction: column;
   width: 400px;
   background: #fdfdfd;
   border-radius: 6px;
   margin-top: 10px;
-  overflow: hidden; /* Hide overflow */
+  overflow: hidden; 
 }
 
 .post-header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center vertically */
+  align-items: center; 
   padding: 8px;
   border-bottom: 2px solid #bda400;
 }
@@ -64,15 +64,15 @@
 .post-text {
   padding: 8px;
   font-size: 16px;
-  max-height: 80px; /* Set the maximum height */
+  max-height: 80px; 
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
 
 .post-item input {
-  height: 100px; /* Öka höjden för textområdet */
-  width: 600px; /* Öka bredden för textområdet */
+  height: 100px; 
+  width: 600px; 
   background: transparent;
   border: none;
   outline: none;
@@ -120,7 +120,7 @@
   padding: 15px;
   border: 2px solid #bda400;
   border-radius: 8px;
-  width: 70%; /* Adjust the width of the input field */
+  width: 70%; 
   background-color: #ffffff;
 }
 
@@ -136,13 +136,13 @@
   border: none;
   outline: none;
   font-size: 16px;
-  height: 30px; /* Adjust the height of the input field */
+  height: 30px; 
 }
 
 .post-button {
   background-color: #fff065;
   color: #383838;
-  padding: 8px 12px; /* Adjust the padding to make the button smaller */
+  padding: 8px 12px; 
   border: none;
   border-radius: 25px;
   margin-left: 10px;
@@ -183,7 +183,7 @@
 
 .post-item {
   display: flex;
-  flex-direction: column; /* Adjusted to display header and text vertically */
+  flex-direction: column; 
   width: 400px;
   background: #fdfdfd;
   border-radius: 6px;
@@ -228,13 +228,13 @@
 }
 
 .likeButton {
-  justify-content: flex-start; /* Align like button to the left */
-  margin-left: 10px; /* Add some margin for separation */
+  justify-content: flex-start; 
+  margin-left: 10px; 
 }
 
 .dislikeButton {
-  justify-content: flex-end; /* Align dislike button to the right */
-  margin-right: 10px; /* Add some margin for separation */
+  justify-content: flex-end; 
+  margin-right: 10px; 
 }
 
 .likeButton:hover{

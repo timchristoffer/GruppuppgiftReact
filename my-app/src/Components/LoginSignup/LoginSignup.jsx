@@ -36,7 +36,6 @@ const LoginSignup = () => {
   const { setUser } = useUser();
 
   useEffect(() => {
-    // Set the local state if email is available in the context
     if (email) {
       setEmail(email);
     }
@@ -48,9 +47,8 @@ const LoginSignup = () => {
     setPassword('');
   };
 
-  // Function to get a random profile picture
   const getRandomProfilePic = () => {
-    const profilePics = [profilePic1, profilePic2]; // Add more profile pictures if needed
+    const profilePics = [profilePic1, profilePic2]; 
     const randomIndex = Math.floor(Math.random() * profilePics.length);
     return profilePics[randomIndex];
   };
@@ -74,7 +72,7 @@ const LoginSignup = () => {
       username,
       email: lowercaseEmail,
       password,
-      profilePic: getRandomProfilePic(), // Set the profile picture
+      profilePic: getRandomProfilePic(),
     };
     const updatedUserData = [...existingUserData, newUser];
 
