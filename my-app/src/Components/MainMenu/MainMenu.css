@@ -1,58 +1,98 @@
-#menuButtons {
-    padding: 1em;
-    background-color: #FFDC00;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    width: 12em;
-    height: 33em;
-    top: 6em;
-    left: 10%;
-}
- button {
-    background-color: #fff065;
-    color: #383838;
-    width: 9em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin: 1em;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: large;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@keyframes dropDown {
+   from {
+     transform: translateY(-100vh); 
+   }
+   to {
+     transform: translateY(0); 
+   }
  }
 
- button:hover {
+ body{
+  padding: 0;
+  margin: 0;
+ }
+
+#menuButtons {
+   padding: 1em;
+   background-color: #FFDC00;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   position: fixed;
+   width: 12em;
+   height: 33em;
+   top: 95px; 
+   left: 20em;
+   animation: dropDown 0.8s ease forwards;
+}
+
+#centralContent {
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   top: 6em;
+   width: 100%;
+   animation: dropDown 0.8s ease forward
+}
+
+#content {
+   display: flex;
+   justify-content: center;
+   background: #FFDC00;
+   border-radius: 20px;
+   height: 40em;
+   width: 40em;
+   overflow: auto;
+   border: 2px solid #FFDC00;
+}
+
+#content::-webkit-scrollbar {
+   display: none;
+}
+
+button {
+   background-color: #fff065;
+   color: #383838;
+   width: 9em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   margin: 1em;
+   border: none;
+   border-radius: 50px;
+   cursor: pointer;
+   font-weight: 700;
+   font-size: large;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+button:hover {
    background-color: #5e5101;
    transition: 0.3s;
-     
- }
+}
 
- button:active {
-    background-color: rgb(216, 216, 216);
- }
+button:active {
+   background-color: rgb(216, 216, 216);
+}
 
- #signOut {
-    background-color: #ffffff;
- }
+#signOut {
+   background-color: #ffffff;
+}
 
- #signOut:hover {
-    background-color: rgb(243, 144, 144);
- }
+#signOut:hover {
+   background-color: rgb(243, 144, 144);
+}
 
- #logo {
+#logo {
    width: 10em;
    opacity: 1;
- }
+}
 
- .icon {
+.icon {
    width: 20px;
    height: 20px;
    margin-right: 10px; 
- }
+}
+

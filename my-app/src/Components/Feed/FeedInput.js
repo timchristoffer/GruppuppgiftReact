@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Feed.css';
+import send from '../Media/send.png';
 
 const FeedInput = ({ onSubmit }) => {
   const [inputText, setInputText] = useState('');
@@ -32,7 +33,7 @@ const FeedInput = ({ onSubmit }) => {
         />
         <span className="character-counter">{characterCount}/250</span>
         <button type="submit-post" className="post-button">
-          Post
+        <img src={send} id='sendLogo' alt='sendLogo'></img>
         </button>
       </div>
     </form>
