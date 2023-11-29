@@ -8,6 +8,8 @@ import homeIcon from '../Media/home.png';
 import profileIcon from '../Media/profile.png';
 import settingsIcon from '../Media/settings.png';
 import signOutIcon from '../Media/signout.png';
+import CentralContent from '../CentralContent/CentralContent';
+
 
 export default function MainMenu({ showFeed, showProfile, showSettings }) {
 

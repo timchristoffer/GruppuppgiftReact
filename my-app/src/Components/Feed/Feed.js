@@ -82,7 +82,7 @@ const Feed = () => {
           {posts.map((post) => (
             <li key={post.id} className="post-item">
               <div className="post-header">
-                <span className="username">{post.username}</span>
+                <span className="username">User: {post.username}</span>
                 <span className="post-date">{post.date}</span>
               </div>
               <div className="post-text">{post.text}</div>
@@ -105,5 +105,3 @@ const Feed = () => {
 };
 
 export default Feed;
-
-

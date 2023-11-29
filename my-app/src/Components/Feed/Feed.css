@@ -84,7 +84,7 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  color: blue;
+  color: #383838;
   margin-right: 10px;
 }
 
@@ -188,6 +188,7 @@
   background: #fdfdfd;
   border-radius: 6px;
   margin-top: 10px;
+  border: 2px solid #bda400;
 }
 
 .post-header {

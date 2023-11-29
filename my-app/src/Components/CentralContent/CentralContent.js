@@ -3,7 +3,6 @@ import React from 'react';
 import Feed from '../Feed/Feed';  // sökväg till Kalles komponent
 import ProfilePage from '../profile/profile';  // sökväg till Hussens komponent
 import Settings from '../SettingsPage/Settings';
-import './CentralContent.css';
 
 export default function CentralContent({ showContent }) {
     return (

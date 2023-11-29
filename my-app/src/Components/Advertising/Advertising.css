@@ -2,18 +2,30 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    right: 10%;
-    top: 6em; 
-    width: 14em;
-    height: 32em;
+    top: 95px; 
+    width: 12em;
+    height: 33em;
     border-radius: 20px;
+    right: 29%;
+    animation: dropDown 0.8s ease forwards;
 }
-img {
+
+#advertisement img {
   opacity: 1;
   border-radius: 20px;
+  border: 2px solid #FFDC00;
 }
 #test{
     padding-top: 1.8em;
     writing-mode: vertical-rl;
     text-orientation: upright;
+}
+
+@keyframes dropDown {
+  from {
+    transform: translateY(-100vh); 
+  }
+  to {
+    transform: translateY(0); 
+  }
 }

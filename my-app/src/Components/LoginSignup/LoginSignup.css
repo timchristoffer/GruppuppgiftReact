@@ -22,10 +22,6 @@
     opacity: 100%;
   }
 
-  .logo:hover{
-    transform: rotate(360deg);
-  }
-
   @keyframes dropDown {
     from {
       transform: translateY(-100vh); 
